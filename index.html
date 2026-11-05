@@ -1,188 +1,99 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#073b32">
-
-    <title>Digital Tasbih</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#073b32">
+  <title>Digital Tasbih</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
 <main class="app-shell">
+  <header class="topbar">
+    <div class="brand-mark">۞</div>
+    <div>
+      <p class="eyebrow">YOUR DAILY DHIKR COMPANION</p>
+      <h1>Digital <span>Tasbih</span></h1>
+    </div>
+    <div class="live-pill"><span class="live-dot"></span> LIVE</div>
+  </header>
 
-    <header class="topbar">
+  <section class="greeting">
+    <p class="arabic" lang="ar" dir="rtl">سُبْحَانَ اللَّهِ وَبِحَمْدِهِ</p>
+    <p class="greeting-sub">প্রতিটি স্মরণে প্রশান্তি</p>
+    <div class="datetime">
+      <span id="clock">--:--:--</span>
+      <span class="date-divider"></span>
+      <span id="date">তারিখ লোড হচ্ছে...</span>
+    </div>
+  </section>
 
-        <div class="brand-mark">۞</div>
+  <section class="stats-grid">
+    <article class="stat-card total-card">
+      <div class="stat-icon">∞</div>
+      <p class="stat-label">সর্বমোট তসবিহ</p>
+      <p class="stat-number" id="totalCount">0</p>
+      <p class="stat-foot">সব সেশনের মোট হিসাব</p>
+    </article>
+    <article class="stat-card session-card">
+      <div class="stat-icon">◷</div>
+      <p class="stat-label">বর্তমান সেশন</p>
+      <p class="stat-number" id="sessionCount">0</p>
+      <p class="stat-foot">এই সেশনে পাঠ করেছেন</p>
+    </article>
+  </section>
 
-        <div>
-            <p class="eyebrow">YOUR DAILY DHIKR COMPANION</p>
-            <h1>Digital <span>Tasbih</span></h1>
-        </div>
+  <section class="counter-panel">
+    <div class="counter-heading">
+      <div><p class="eyebrow">TAP TO COUNT</p><h2>তসবিহ গণনা</h2></div>
+      <span class="counter-badge">একবার চাপুন +১</span>
+    </div>
 
-        <div class="live-pill">
-            <span class="live-dot"></span>
-            LIVE
-        </div>
+    <div class="counter-wrap">
+      <div class="ring ring-one"></div>
+      <div class="ring ring-two"></div>
+      <button class="count-button" id="countButton" type="button" aria-label="তসবিহ গণনা করুন">
+        <span class="button-inner">
+          <span class="tap-symbol">＋</span>
+          <span class="button-label">তসবিহ</span>
+          <span class="button-hint">TAP TO COUNT</span>
+        </span>
+      </button>
+    </div>
 
-    </header>
+    <p class="counter-note" id="counterNote" aria-live="polite">আল্লাহর স্মরণে আপনার সময়টি হোক সুন্দর</p>
+    <div class="actions">
+      <button class="reset-button" id="resetButton" type="button"><span>↻</span> সেশন রিসেট</button>
+    </div>
+    <p class="reset-hint">রিসেট করলে শুধু বর্তমান সেশনের কাউন্ট শূন্য হবে।</p>
+  </section>
 
-
-    <section class="greeting">
-
-        <p class="arabic" lang="ar" dir="rtl">
-            سُبْحَانَ اللَّهِ وَبِحَمْدِهِ
-        </p>
-
-        <p class="greeting-sub">
-            প্রতিটি স্মরণে প্রশান্তি
-        </p>
-
-        <div class="datetime">
-            <span id="clock">--:--:--</span>
-            <span class="date-divider"></span>
-            <span id="date">তারিখ লোড হচ্ছে...</span>
-        </div>
-
-    </section>
-
-
-    <section class="stats-grid">
-
-        <article class="stat-card total-card">
-
-            <div class="stat-icon">∞</div>
-
-            <p class="stat-label">সর্বমোট তসবিহ</p>
-
-            <p class="stat-number" id="totalCount">0</p>
-
-            <p class="stat-foot">
-                সব সেশনের মোট হিসাব
-            </p>
-
-        </article>
-
-
-        <article class="stat-card session-card">
-
-            <div class="stat-icon">◷</div>
-
-            <p class="stat-label">বর্তমান সেশন</p>
-
-            <p class="stat-number" id="sessionCount">0</p>
-
-            <p class="stat-foot">
-                এই সেশনে পাঠ করেছেন
-            </p>
-
-        </article>
-
-    </section>
-
-
-    <section class="counter-panel">
-
-        <div class="counter-heading">
-
-            <div>
-                <p class="eyebrow">TAP TO COUNT</p>
-                <h2>তসবিহ গণনা</h2>
-            </div>
-
-            <span class="counter-badge">
-                একবার চাপুন +১
-            </span>
-
-        </div>
-
-
-        <div class="counter-wrap">
-
-            <div class="ring ring-one"></div>
-            <div class="ring ring-two"></div>
-
-            <button
-                class="count-button"
-                id="countButton"
-                type="button"
-                aria-label="তসবিহ গণনা করুন"
-            >
-
-                <span class="button-inner">
-
-                    <span class="tap-symbol">＋</span>
-
-                    <span class="button-label">
-                        তসবিহ
-                    </span>
-
-                    <span class="button-hint">
-                        TAP TO COUNT
-                    </span>
-
-                </span>
-
-            </button>
-
-        </div>
-
-
-        <p class="counter-note" id="counterNote">
-            আল্লাহর স্মরণে আপনার সময়টি হোক সুন্দর
-        </p>
-
-
-        <div class="actions">
-
-            <button
-                class="reset-button"
-                id="resetButton"
-                type="button"
-            >
-
-                <span>↻</span>
-                সেশন রিসেট
-
-            </button>
-
-        </div>
-
-
-        <p class="reset-hint">
-            রিসেট করলে শুধু বর্তমান সেশনের কাউন্ট শূন্য হবে।
-        </p>
-
-    </section>
-
-
-    <footer>
-
-        <span class="footer-ornament">✦</span>
-
-        <p>
-            ধীরে, মনোযোগ দিয়ে এবং আন্তরিকতার সাথে জিকির করুন
-        </p>
-
-        <span class="footer-ornament">✦</span>
-
-    </footer>
-
+  <footer>
+    <span class="footer-ornament">✦</span>
+    <p>ধীরে, মনোযোগ দিয়ে এবং আন্তরিকতার সাথে জিকির করুন</p>
+    <span class="footer-ornament">✦</span>
+  </footer>
 </main>
 
+<!-- 100-count celebration popup -->
+<div class="celebration-overlay" id="celebrationModal" role="dialog" aria-modal="true" aria-labelledby="celebrationTitle">
+  <div class="celebration-box">
+    <div class="flower-container" aria-hidden="true">
+      <span>🌸</span><span>🌹</span><span>🌷</span>
+      <span>🌻</span><span>🌼</span><span>💐</span>
+    </div>
+    <h2 lang="ar">ما شاء الله</h2>
+    <h3 id="celebrationTitle">মাশাআল্লাহ! অভিনন্দন!</h3>
+    <p>আপনি বর্তমান সেশনে আরও ১০০ বার তসবিহ পাঠ সম্পন্ন করেছেন। আল্লাহ আপনার জিকির কবুল করুন।</p>
+    <div class="celebration-count">🎉 <span id="milestoneCount">100</span> Tasbih Completed 🎉</div>
+    <button id="continueButton" type="button">Continue ❤️</button>
+  </div>
+</div>
 
-<div class="toast" id="toast" role="status"></div>
-
-
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script src="script.js"></script>
-
 </body>
 </html>
